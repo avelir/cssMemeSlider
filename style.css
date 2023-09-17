@@ -1,0 +1,92 @@
+/* Add your CSS styles here */
+.slider-container {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+
+  flex-direction: column;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.7s ease;
+}
+
+.slide {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+}
+
+.control-buttons {
+  display: flex;
+}
+
+.control-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #007bff;
+  border: none;
+  margin: 0 1rem; /* Updated to use 'rem' unit for spacing */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 0.7rem; /* Updated to use 'rem' unit */
+  display: block;
+}
+
+.control-button:hover {
+  background-color: #0056b3;
+}
+
+.control-button:active {
+  transform: scale(0.95);
+  background-color: #002147;
+}
+
+.control-button.active {
+  background-color: #002147;
+}
+
+.caption-container {
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.caption {
+  font-size: 1.2rem; /* Updated to use 'rem' unit */
+  opacity: 0; /* Initially hide captions */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.caption.active {
+  opacity: 1; /* Show active caption */
+}
+
+.current-caption {
+  font-size: 1.25rem; /* Updated to use 'rem' unit */
+}
+
+.btns-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .btns-caption {
+    flex-direction: column;
+  }
+
+  .control-button {
+    order: 1;
+    margin-top: 1rem;
+  }
+
+  .caption-container {
+    order: 2;
+  }
+}
